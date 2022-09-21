@@ -5,6 +5,7 @@ import Dashboard from './Components/Dashboard';
 import Contact from './Components/Contact';
 import {BrowserRouter, Routes,Route} from 'react-router-dom'
 import Login from './Components/Login';
+import Logout from './Components/Logout';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route index element={<Dashboard/>}/>
         <Route path='/contact' element={<Contact/>}/>
         <Route path='/login' element={<Login/>}/>
+        <Route path='/signup' element={<Logout/>}/>
 
       </Route>
     </Routes>

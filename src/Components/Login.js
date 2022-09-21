@@ -25,6 +25,7 @@ export default function Login() {
           <Box component='form' noValidate sx={{mt:2, px:3}} id='login-form'>
             <TextField noValidate required name='Name' fullWidth label='Enter Your Name' id='your-name'/>
             <TextField noValidate required fullWidth margin='normal' sx={{mt:2}} name='email' label='Enter Your email'/>
+            <TextField   noValidate required fullWidth margin='normal' name='password' label='Your Password'/>
             <Box textAlign='center'>
                 <Button type='submit' variant="contained" sx={{mt:3, mb:2, px:2}}>Login</Button>
             </Box>
