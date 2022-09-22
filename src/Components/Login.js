@@ -7,6 +7,7 @@ import {
   form,
   Card,
   Typography,
+  Alert
 } from "@mui/material";
 import Pic from "./images/pic-1.png";
 import { useNavigate } from "react-router-dom";
@@ -15,6 +16,11 @@ export default function Login() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState({
+    status:false,
+    type:"",
+    msg:""
+  })
   let navigate = useNavigate();
 
   async function handleLogin() {
@@ -26,8 +32,19 @@ export default function Login() {
     responseData.map((item) => {
       console.log(item);
       console.log(item.name);
-      if (data.email === item.email) {
-        navigate("/contact");
+      if (data.email === item.email && data.password === item.cnfpassword) {
+        if(data.name && data.email === " "){
+          console.log("please fill the required fields")
+        }
+        setError({status:true,type:"success", msg:"logged in sucessfully"})
+        setTimeout(()=>{
+          navigate("/contact");
+
+        }, 3000)
+      } 
+      else{
+        setError({status:true, type:"error", msg:"Please create your account"});
+        console.log("You are not allowed")
       }
     });
   }
@@ -96,6 +113,7 @@ export default function Login() {
                 >
                   Login
                 </Button>
+                <Alert severity={error.type}>{error.msg}</Alert>
               </Box>
             </Box>
           </Card>

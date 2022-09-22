@@ -27,6 +27,8 @@ export default function Logout() {
   async function signUp(e) {
     e.preventDefault();
     let item = { name, email, password, cnfpassword };
+    console.log(item.email);
+
     if (item.name && item.email) {
       if (item.password === item.cnfpassword) {
         let result = await fetch("http://localhost:8001/user", {
@@ -39,7 +41,9 @@ export default function Logout() {
           body: JSON.stringify(item),
         });
         result = await result.json();
+
         console.log("result", result);
+
         setError({
           status: true,
           type: "success",
