@@ -1,45 +1,89 @@
 {
   "user": [
     {
-      "id": 1,
-      "Name": "Dev",
-      "email": "xyz12@gmail.com"
+      "id": "1",
+      "name": "Dev",
+      "email": "xyz12@gmail.com",
+      "password": "1235",
+      "cnfpassword": "1235"
     },
     {
-      "id": 2,
-      "Name": "Peter",
-      "email": "abc44@gmail.com"
+      "id": "2",
+      "name": "Dev",
+      "email": "xyz12@gmail.com",
+      "password": "1235",
+      "cnfpassword": "1235"
     },
     {
-      "id": 3
+      "rollno.": "3",
+      "name": "gxhh",
+      "email": "ssx@gmail.com",
+      "password": "6466",
+      "cnfpassword": "6466",
+      "id": "OMaP3eg"
     },
     {
-      "id": 4,
-      "Name": "harry",
-      "email": "vvxv12@gmail.com"
+      "name": " Dev",
+      "email": " hxu@gmail.com",
+      "password": "778",
+      "cnfpassword": "778",
+      "id": "TyEjfBw"
     },
     {
-      "id": 6,
-      "Name": "honey singh",
-      "email": "vvxv12@gmail.com"
-    },
-    {
-      "name": "",
-      "email": "",
+      "name": " ",
+      "email": " ",
       "password": "",
-      "id": 7
+      "cnfpassword": "",
+      "id": "_TXKx65"
     },
     {
-      "name": "",
-      "email": "",
-      "password": "",
-      "id": 8
+      "name": " ",
+      "email": " ",
+      "password": " ",
+      "cnfpassword": " ",
+      "id": "_uAacwN"
     },
     {
-      "name": "sss",
-      "email": "ssssss",
-      "password": "aaaaaa",
-      "id": 9
+      "name": "dev",
+      "email": "cccc",
+      "password": "123",
+      "cnfpassword": "123",
+      "id": "V_9jBDQ"
+    },
+    {
+      "name": "dev",
+      "email": "dev32@gmail.com",
+      "password": "123",
+      "cnfpassword": "123",
+      "id": "myuuU1U"
+    },
+    {
+      "name": "dev",
+      "email": "dev32@gmail.com",
+      "password": "123",
+      "cnfpassword": "123",
+      "id": "ZCtAZCG"
+    },
+    {
+      "name": "dev",
+      "email": "dev23@gmail.com",
+      "password": "123",
+      "cnfpassword": "123",
+      "id": "FLMXUxR"
+    },
+    {
+      "name": "dev",
+      "email": "gangwardev40@gmail.com",
+      "password": "123",
+      "cnfpassword": "123",
+      "id": "2_HLLGs"
+    },
+    {
+      "name": "dev",
+      "email": "gangwardev50@gmail.com",
+      "password": "123",
+      "cnfpassword": "123",
+      "id": "POUqnv3"
     }
   ]
 }

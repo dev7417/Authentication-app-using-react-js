@@ -7,19 +7,64 @@ import {
   Typography,
   Button,
   form,
+  Alert,
 } from "@mui/material";
 import Pic from "./images/pic-3.png";
+import { useNavigate } from "react-router-dom";
 
 export default function Logout() {
-  const [name, setName] = useState(" ");
-  const [email, setEmail] = useState(" ");
-  const [password, setPassword] = useState(" ");
-  const [cnfpassword, setCnfPassword] = useState(" ");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [cnfpassword, setCnfPassword] = useState("");
+  const [error, setError] = useState({
+    status: false,
+    type: "",
+    msg: "",
+  });
+  const navigate = useNavigate();
 
-  const signUp = () => {
+  async function signUp(e) {
+    e.preventDefault();
     let item = { name, email, password, cnfpassword };
-    console.log(item);
-  };
+    if (item.name && item.email) {
+      if (item.password === item.cnfpassword) {
+        let result = await fetch("http://localhost:8001/user", {
+          method: "POST",
+
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify(item),
+        });
+        result = await result.json();
+        console.log("result", result);
+        setError({
+          status: true,
+          type: "success",
+          msg: "you have registered successfully",
+        });
+        setTimeout(() => {
+          navigate("/login");
+        }, 3000);
+      } else {
+        // console.log("you are not allowed");
+        setError({
+          status: true,
+          type: "error",
+          msg: "your passwords does not match",
+        });
+      }
+    } else {
+      console.log("please fill the required fields");
+      setError({
+        status: true,
+        type: "error",
+        msg: "please fill the required fields",
+      });
+    }
+  }
   return (
     <>
       <Grid container sx={{ height: "90vh" }}>
@@ -94,6 +139,7 @@ export default function Logout() {
                 >
                   Signup
                 </Button>
+                <Alert severity={error.type}>{error.msg}</Alert>
               </Box>
             </Box>
           </Card>
