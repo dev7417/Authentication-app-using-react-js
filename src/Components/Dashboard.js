@@ -12,8 +12,8 @@ export default function   () {
     },3000)
   }
 
-  let userData = localStorage.getItem("Item");
-  let parseData = JSON.parse(userData);
+  // let userData = localStorage.getItem("loginData");
+  // let parseData = JSON.parse(userData);
   return (
     <>
     <CssBaseline />
@@ -25,9 +25,9 @@ export default function   () {
           sm={8}
           sx={{ backgroundColor: "gray", p: 5, color: "white" }}
         >
-          <Typography variant="h5">{parseData.email}</Typography>
+          <Typography variant="h5">xyz12@gmail.com</Typography>
           <Typography variant="h4" sx={{ mt: 2 }}>
-            {parseData.name}
+          Peter
           </Typography>
           <Button
             variant="contained"

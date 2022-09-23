@@ -33,9 +33,14 @@ export default function Login() {
     let response = await fetch("http://localhost:8001/user");
     let responseData = await response.json();
     // console.log(responseData);
-    responseData.map((item) => {
-      console.log(item);
-      // console.log(item.name);
+    // responseData.map((item) => {
+    // console.log(item);
+    // console.log(item.name);
+    let loginLocalData = localStorage.setItem(
+      "loginData",
+      JSON.stringify(data)
+    );
+    responseData.filter((item) => {
       if (!data.name && !data.email) {
         setError({
           status: true,

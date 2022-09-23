@@ -51,10 +51,10 @@ export default function Logout() {
           type: "success",
           msg: "you have registered successfully",
         });
-        setTimeout(() => {
-          setLoggedIn(true);
+        // setTimeout(() => {
+        //   setLoggedIn(true);
           navigate("/login");
-        }, 3000);
+        // }, 3000);
       } else {
         // console.log("you are not allowed");
         setError({
