@@ -280,6 +280,20 @@
       "password": "125",
       "cnfpassword": "125",
       "id": "0F9llrr"
+    },
+    {
+      "name": "dev",
+      "email": "gangwardev50@gmail.com",
+      "password": "123",
+      "cnfpassword": "123",
+      "id": "qFhu7fS"
+    },
+    {
+      "name": "rohan singh",
+      "email": "rohan777@gmail.com",
+      "password": "777",
+      "cnfpassword": "777",
+      "id": "xS_H67G"
     }
   ]
 }

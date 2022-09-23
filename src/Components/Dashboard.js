@@ -11,6 +11,9 @@ export default function   () {
       navigate('/login')
     },3000)
   }
+
+  let userData = localStorage.getItem("Item");
+  let parseData = JSON.parse(userData);
   return (
     <>
     <CssBaseline />
@@ -22,9 +25,9 @@ export default function   () {
           sm={8}
           sx={{ backgroundColor: "gray", p: 5, color: "white" }}
         >
-          <Typography variant="h5">hello125@gmail.com</Typography>
+          <Typography variant="h5">{parseData.email}</Typography>
           <Typography variant="h4" sx={{ mt: 2 }}>
-            Peter
+            {parseData.name}
           </Typography>
           <Button
             variant="contained"
@@ -35,9 +38,9 @@ export default function   () {
           >
             Logout
           </Button>
+          
         </Grid>
        
-        {/* <Alert severity={error.type}>{error.msg}</Alert> */}
       </Grid>   
     </>
   )
