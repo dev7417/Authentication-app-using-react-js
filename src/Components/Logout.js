@@ -17,6 +17,7 @@ export default function Logout() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [cnfpassword, setCnfPassword] = useState("");
+  const [loggedIn, setLoggedIn] = useState(false);
   const [error, setError] = useState({
     status: false,
     type: "",
@@ -27,6 +28,7 @@ export default function Logout() {
   async function signUp(e) {
     e.preventDefault();
     let item = { name, email, password, cnfpassword };
+    let localData = localStorage.setItem("Item", JSON.stringify(item));
     console.log(item.email);
 
     if (item.name && item.email) {
@@ -50,6 +52,7 @@ export default function Logout() {
           msg: "you have registered successfully",
         });
         setTimeout(() => {
+          setLoggedIn(true);
           navigate("/login");
         }, 3000);
       } else {

@@ -7,7 +7,7 @@ import {
   form,
   Card,
   Typography,
-  Alert
+  Alert,
 } from "@mui/material";
 import Pic from "./images/pic-1.png";
 import { useNavigate } from "react-router-dom";
@@ -17,34 +17,44 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState({
-    status:false,
-    type:"",
-    msg:""
-  })
+    status: false,
+    type: "",
+    msg: "",
+  });
   let navigate = useNavigate();
+
+  const handleSignup = () => {
+    navigate("/signup");
+  };
 
   async function handleLogin() {
     let data = { name, email, password };
     // console.log(data.email);
     let response = await fetch("http://localhost:8001/user");
     let responseData = await response.json();
-    console.log(responseData);
+    // console.log(responseData);
     responseData.map((item) => {
       console.log(item);
-      console.log(item.name);
-      if (data.email === item.email && data.password === item.cnfpassword) {
-        if(data.name && data.email === " "){
-          console.log("please fill the required fields")
-        }
-        setError({status:true,type:"success", msg:"logged in sucessfully"})
-        setTimeout(()=>{
-          navigate("/contact");
-
-        }, 3000)
-      } 
-      else{
-        setError({status:true, type:"error", msg:"Please create your account"});
-        console.log("You are not allowed")
+      // console.log(item.name);
+      if (!data.name && !data.email) {
+        setError({
+          status: true,
+          type: "error",
+          msg: "please fill the required fields",
+        });
+        console.log("please fill up the data");
+      } else if (data.email === item.email && data.password === item.password) {
+        setError({
+          status: true,
+          type: "success",
+          msg: "you have logged in successfully",
+        });
+        console.log("submitted");
+        setTimeout(() => {
+          navigate("/dashboard");
+        }, 3000);
+      } else if (data.email !== item.email && data.password !== item.password) {
+        setError({ status: true, type: "error", msg: "please signup first" });
       }
     });
   }
@@ -112,6 +122,14 @@ export default function Login() {
                   onClick={handleLogin}
                 >
                   Login
+                </Button>
+                <Button
+                  type="submit"
+                  variant="contained"
+                  sx={{ mt: 3, mb: 2, mx: 2, px: 2 }}
+                  onClick={handleSignup}
+                >
+                  Signup
                 </Button>
                 <Alert severity={error.type}>{error.msg}</Alert>
               </Box>
