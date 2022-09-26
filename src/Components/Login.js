@@ -55,9 +55,9 @@ export default function Login() {
           msg: "you have logged in successfully",
         });
         console.log("submitted");
-        setTimeout(() => {
+       
           navigate("/dashboard");
-        }, 3000);
+        
       } else if (data.email !== item.email && data.password !== item.password) {
         setError({ status: true, type: "error", msg: "please signup first" });
       }

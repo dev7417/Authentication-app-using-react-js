@@ -364,6 +364,34 @@
       "password": "4444",
       "cnfpassword": "4444",
       "id": "Dqmzxo1"
+    },
+    {
+      "name": "dev",
+      "email": "gangwardev123@gmail.com",
+      "password": "123",
+      "cnfpassword": "123",
+      "id": "JwFxOQM"
+    },
+    {
+      "name": "dev",
+      "email": "gangu123@gmail.com",
+      "password": "125",
+      "cnfpassword": "125",
+      "id": "Abs73BH"
+    },
+    {
+      "name": "pradeep",
+      "email": "pradeep12@gmail.com",
+      "password": "778",
+      "cnfpassword": "778",
+      "id": "2QQNVaq"
+    },
+    {
+      "name": "parkhi",
+      "email": "parkhi887@gmail.com",
+      "password": "887",
+      "cnfpassword": "887",
+      "id": "2L7qm6T"
     }
   ]
 }

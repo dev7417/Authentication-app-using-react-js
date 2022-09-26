@@ -7,9 +7,9 @@ export default function   () {
   const handleLogOut = ()=>{
     console.log("Logout working");
     localStorage.clear();
-    setTimeout(()=>{
+   
       navigate('/login')
-    },3000)
+   
   }
 
   // let userData = localStorage.getItem("loginData");
